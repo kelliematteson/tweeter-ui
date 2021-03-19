@@ -1,4 +1,6 @@
-<>
+
+export default function About(props) {
+  <>
   <div className="about">
     <h1>About</h1> 
   </div>
@@ -84,5 +86,5 @@
   </div>
  
 </>
-
-export default About;
+}
+// export default About;
