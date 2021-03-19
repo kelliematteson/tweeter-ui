@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-
-export default function About(props) {
-  <>
-  <div className="about">
-    <h1>About</h1> 
-  </div>
-  <div className="principles"><h2>Our Company</h2></div>
-  <h4>Tweeter is a service committed to diversity in its many forms. Twitter is a community oriented platform that is home to a variety of opinions, people, insights and backgrounds. It was founded by Team Goat in 2021 in the SEIR-Ruth Cohort of General Assembly by  Kellie, Parker, Kevin, Joseph, Andrea, Marsallis, and Ryan.</h4>
-  <div className="purpose"><h2>Our Mission</h2></div>
-  <h4>The Mission of Team Goat is to work as a team, execute our vision, and continue the legacy<br />of Goats that have come before us.</h4>
-  <div className="principles"><h2>Our Principles</h2></div>
-  <h3><ul>Creating a community</ul></h3>
-  <h4>The purpose of Tweeter is to create a community that contributes their <br /> own unique perspectives and ideas through our consinstently improving technology.</h4>
-  <h3><li>Promoting Health</li></h3>
-  <h4>Healthy conversations are a part of tweeter. Converse about sports, daily <br />happenings or anything that you can think of which can be healthy for users.</h4>
-  <h3><li>Being Fun</li></h3>
-  <h4>Tweeter values being fun for its users, and Team Goat values having fun<br /> while creating this project as a group.</h4>
-  <div className="team"><h2>Meet Team Goat</h2>
-  </div>
-  <h3><li>Kellie's Bio:</li></h3>
-=======
 import React, { useState, useEffect } from 'react';
 import '../css/AboutPage.css'
 
@@ -88,7 +66,6 @@ function About() {
   <img className='kelliepic' src='https://i.imgur.com/F9OeeGQ.jpg'></img>
   </div>
   <div className='kellieInfo'>
->>>>>>> 04dbc359135d05d25457932ceb92350b304b2800
   <h4> Kellie is an actor who codes. It is an easy fit for her because the two require a similar approach. Acting allows Kellie to find her own way into a character. With programming, she can step into challenges with an open mind and leverage the tools available to creatively problem solve and breathe life into products.</h4>
   </div>
   <br /> 
@@ -271,12 +248,6 @@ function About() {
       © 2021 Tweeter, Inc.
     </a>
   </div>
-<<<<<<< HEAD
- 
-</>
-}
-// export default About;
-=======
   <br />
 
   <div
@@ -287,4 +258,3 @@ function About() {
 
   )}
 export default About;
->>>>>>> 04dbc359135d05d25457932ceb92350b304b2800
