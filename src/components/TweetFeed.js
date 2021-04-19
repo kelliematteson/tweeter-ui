@@ -69,7 +69,7 @@ export default function TweetFeed(props) {
                 <ul>
                     {tweets.map((tweet, id) => {
                         return (          
-                            <div className="tweet-container" key={id} onClick={props.toggleShowPageHide}> 
+                            <div className="tweet-container" key={id} onClick={handleShowpage}> 
 
                             <div className="tweet-profile-section">
                                 <img className="tweet-profile-pic" src={tweet.profile}></img>

@@ -13,7 +13,22 @@ function App() {
   
 	const toggleShowPageHide = () => {
 		setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
-	};
+  };
+  
+  //handleShowPage function - fetch request with the tweet.id
+  const [showtweet, setShowTweet] = useState({});
+  const handleTweetShowPage = async (id) => {
+    try {
+    const res = await fetch(`https://tweeter-api-goat.herokuapp.com/tweets/${id}`);  
+    const data = await res.json();
+    setShowTweet(data.tweet);
+    toggleShowPageHide();
+    } catch (err) {
+       console.error(err)
+    }
+  }
+  
+}
 
   return (
     <div className="App">
@@ -33,12 +48,13 @@ function App() {
 =======
       <div className="app-right">
         <section id="tweets-section">
-          <TweetFeed toggleShowPageHide={toggleShowPageHide}/>
+          <TweetFeed handleTweetShowPage={handleTweetShowPage}/>
         </section>
         {showPageHidden.showPageHidden === false ? (
           <section id="tweet-show-page-section">
             <TweetShowPage 
               toggleShowPageHide={toggleShowPageHide}
+              showTweet={showTweet}
             />
           </section>
 				) : (
