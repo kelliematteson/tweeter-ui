@@ -48,9 +48,7 @@ export default function TweetFeed(props) {
         <div className="tweet-feed-container">
             <div className="home-header">
                 <span className="bold">Home</span>
-                <div className="home-header-icon-container">
-                    <div className="home-header-icon"></div>
-                </div>
+                <div className="home-header-icon"></div>
             </div>
 
             <div className="tweet-form-container">
@@ -61,28 +59,7 @@ export default function TweetFeed(props) {
                         <label className="label_form">
                             <input type="text" name="content" ref={input} placeholder="What's happening?" />
                         </label>
-                    <div className="tweet-form-bottom">
-                        <div className="tweet-form-icon-container">
-                            <div className="tweet-form-icons">
-                                <div className="media-icon-container">
-                                    <div className="media-icon"></div>
-                                </div>
-                                <div className="gif-icon-container">
-                                    <div className="gif-icon"></div>
-                                </div>
-                                <div className="poll-icon-container">
-                                    <div className="poll-icon"></div>
-                                </div>
-                                <div className="emoji-icon-container">
-                                    <div className="emoji-icon"></div>
-                                </div>
-                                <div className="schedule-icon-container">
-                                    <div className="schedule-icon"></div>
-                                </div>
-                            </div>    
-                        </div> 
-                        <input className="tweet_button" type="submit" value="Tweet"></input>
-                    </div>
+                    <input className="tweet_button" type="submit" value="Tweet"></input>
                 </form>
             </div>
             
@@ -92,32 +69,17 @@ export default function TweetFeed(props) {
                 <ul>
                     {tweets.map((tweet, id) => {
                         return (          
-                            <div className="tweet-container hover-grey" key={id} onClick={()=>{props.handleTweetShowPage(tweet.id)}}> 
+                            <div className="tweet-container" key={id} onClick={handleShowpage}> 
 
-                                <div className="tweet-profile-section">
-                                    <img className="tweet-profile-pic" src={tweet.profile} alt="profile"></img>
-                                </div>
+                            <div className="tweet-profile-section">
+                                <img className="tweet-profile-pic" src={tweet.profile}></img>
+                            </div>
 
-                                <div className="tweet-information">
-                                    <div className="tweet-author"><span className="bold">{tweet.title}</span> <span className="username">@{tweet.author} &#183; 12m </span></div>
-                                    <div className="tweet-text"> {tweet.content}</div>
-                                    <div className="tweet-icons-container">
-                                        <div className="tweet-icons">
-                                            <div className="comment-icon-container">
-                                                <div className="comment-icon"></div>
-                                            </div>
-                                            <div className="retweet-icon-container">
-                                                <div className="retweet-icon"></div>
-                                            </div>
-                                            <div className="like-icon-container">
-                                                <div className="like-icon"></div>
-                                            </div>
-                                            <div className="share-icon-container">
-                                                <div className="share-icon"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="tweet-information">
+                                <div className="tweet-author"><span className="bold">{tweet.title}</span> @{tweet.author} &#183; 12m </div>
+                                <div className="tweet-text"> {tweet.content}</div>
+                                <div className="tweet-icons"></div>
+                            </div>
 
                             </div>
 

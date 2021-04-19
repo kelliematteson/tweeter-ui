@@ -1,10 +1,11 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+
 import '../css/App.css';
 import TweetFeed from '../components/TweetFeed';
 import NavBar from '../components/NavBar';
 import NewsFeed from '../components/NewsFeed';
 import TweetShowPage from '../components/TweetShowPage';
-import SplashPage from '../components/SplashPage';
+
 
 function App() {
 
@@ -12,9 +13,10 @@ function App() {
   
 	const toggleShowPageHide = () => {
 		setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
-	};
-
-  const [showTweet, setShowTweet] = useState({});
+  };
+  
+  //handleShowPage function - fetch request with the tweet.id
+  const [showtweet, setShowTweet] = useState({});
   const handleTweetShowPage = async (id) => {
     try {
     const res = await fetch(`https://tweeter-api-goat.herokuapp.com/tweets/${id}`);  
@@ -22,13 +24,14 @@ function App() {
     setShowTweet(data.tweet);
     toggleShowPageHide();
     } catch (err) {
-      console.error(err)
+       console.error(err)
     }
   }
+  
+}
 
   return (
     <div className="App">
-      
       <nav>
         <NavBar/>
       </nav>
