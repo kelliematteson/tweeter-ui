@@ -1,11 +1,10 @@
-import {useState, useEffect} from 'react';
-
+import {useState} from 'react';
 import '../css/App.css';
 import TweetFeed from '../components/TweetFeed';
 import NavBar from '../components/NavBar';
 import NewsFeed from '../components/NewsFeed';
 import TweetShowPage from '../components/TweetShowPage';
-
+import SplashPage from '../components/SplashPage';
 
 function App() {
 
@@ -13,10 +12,9 @@ function App() {
   
 	const toggleShowPageHide = () => {
 		setShowPageHidden({ showPageHidden: !showPageHidden.showPageHidden });
-  };
-  
-  //handleShowPage function - fetch request with the tweet.id
-  const [showtweet, setShowTweet] = useState({});
+	};
+
+  const [showTweet, setShowTweet] = useState({});
   const handleTweetShowPage = async (id) => {
     try {
     const res = await fetch(`https://tweeter-api-goat.herokuapp.com/tweets/${id}`);  
@@ -24,28 +22,16 @@ function App() {
     setShowTweet(data.tweet);
     toggleShowPageHide();
     } catch (err) {
-       console.error(err)
+      console.error(err)
     }
   }
-  
-}
 
   return (
     <div className="App">
+      
       <nav>
         <NavBar/>
       </nav>
-<<<<<<< HEAD
-      <section id="tweets-section">
-        <TweetFeed />
-      </section>
-      <section id="tweet-show-page-section">
-      </section>
-      <section id="news-section">
-        {/* Ryan - NewsFeed component*/}
-       
-      </section>
-=======
       <div className="app-right">
         <section id="tweets-section">
           <TweetFeed handleTweetShowPage={handleTweetShowPage}/>
@@ -64,7 +50,6 @@ function App() {
           <NewsFeed />
         </section>
       </div>
->>>>>>> 0a93408d1b684154f154080de28a48136765824b
     </div>
   )
 }
